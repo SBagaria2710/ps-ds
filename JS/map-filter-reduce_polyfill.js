@@ -4,8 +4,8 @@ Array.prototype.myMap = function(callback) {
   if (this === null) throw new TypeError( 'Array.prototype.myMap ' + 'called on null or undefined');
   if(!callback) throw new TypeError(callback + ' is not a function');
   let resultArr = [];
-  this.forEach((item, index, this) => {
-    const val = callback(item, index);
+  this.forEach((item, index) => {
+    const val = callback(item, index, this);
     resultArr.push(val);
   });
   return resultArr;
@@ -19,8 +19,8 @@ Array.prototype.myFilter = function(callback) {
   if (this === null) throw new TypeError( 'Array.prototype.myFilter ' + 'called on null or undefined');
   if(!callback) throw new TypeError(callback + ' is not a function');
   let resultArr = [];
-  this.forEach((item, index, this) => {
-    const val = callback(item, index);
+  this.forEach((item, index) => {
+    const val = callback(item, index, this);
     if(!!val) resultArr.push(item);
   });
   return resultArr;
@@ -33,9 +33,9 @@ arr.myFilter(item => item < 3);
 Array.prototype.myReduce = function(callback, acc = '') {
   if (this === null) throw new TypeError( 'Array.prototype.myReduce ' + 'called on null or undefined');
   if(!callback) throw new TypeError(callback + ' is not a function');
-  this.forEach((item, index, this) => {
+  this.forEach((item, index) => {
     if (acc === '') acc = 0;
-    acc = callback(acc, item, index,this);
+    acc = callback(acc, item, index, this);
   });
   return acc;
 }
