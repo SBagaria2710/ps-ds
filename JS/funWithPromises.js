@@ -26,13 +26,13 @@ let f3 = (cb) => {
 
 function parallelConsole(arr, cb) {
   // First Way
-  let promisedArr = arr.map(func => func((temp, val) => val));
+  let promisedArr = arr.map(func => func((_, val) => val));
   Promise.all(promisedArr).then(val => cb(val));
   
   //Second Way
   let result = [];
   arr.forEach((func, index) => {
-    func((temp, val) => val).then(function(val) {
+    func((_, val) => val).then(function(val) {
       result[index] = val;
       if(arr.length === result.length && !result.includes(undefined)) {
         cb(result);
