@@ -16,7 +16,6 @@ var addTwoNumbers = function (l1, l2) {
   for (let i = 0; i < l1.length; i++) {
     const secondVal = i >= l2.length ? 0 : l2[i];
     temp = l1[i] + secondVal + carryOn;
-    console.log(temp, l1[i], secondVal, carryOn);
     if (temp > 9 && i != l1.length - 1) {
       carryOn = 1;
       result[i] = temp - 10;
