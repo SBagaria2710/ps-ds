@@ -1,5 +1,10 @@
+const DEFAULT_CAPACITY = 5;
+
 class LRUCache {
-    constructor(capacity) {
+    #cache;
+    #capacity;
+
+    constructor(capacity = DEFAULT_CAPACITY) {
         this.#capacity = capacity;
         this.#cache = new Map();
     }
@@ -20,5 +25,9 @@ class LRUCache {
             this.#cache.set(key, value);
             return value;
         }
+    }
+
+    getAll() {
+        return this.#cache;
     }
 }
