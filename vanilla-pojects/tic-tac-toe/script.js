@@ -56,7 +56,7 @@ function resetGame() {
     gameOverMessage.style.visibility = "hidden";
     playerTurnText.style.visibility = "visible";
     document.querySelectorAll(".grid-cell").forEach(cell => {
-        cell.classList.remove("disabled", "x", "o");
+        cell.classList.remove("disabled", "x", "o", "ghoomer");
     });
     resetBtn.classList.remove("myMoneyDont");
     xTurn = Math.floor(Math.random() * 2);
