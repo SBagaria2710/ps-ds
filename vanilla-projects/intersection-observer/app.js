@@ -3,15 +3,14 @@ const bodyElem = document.querySelector("body");
 
 let options = {
     root: null,
-    threshold: 0.5
+    threshold: 0.1
 };
 
 let observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
+        const className = index % 2 === 0 ? "peekabooLeft" : "peekabooRight";
         if (entry.isIntersecting) {
-            entry.target.style.backgroundColor = "red";
-        } else {
-            entry.target.style.backgroundColor = "green";
+            entry.target.classList.add(className);
         }
     });
 }, options);
@@ -23,8 +22,10 @@ function init(num = DEFAULT_CARD_COUNT) {
         // Create a card
         const cardElem = document.createElement("div");
         cardElem.classList.add("card");
+        const strongElem = document.createElement("strong");
         const newContent = document.createTextNode(`Card Number: ${i + 1}`);
-        cardElem.appendChild(newContent);
+        strongElem.appendChild(newContent);
+        cardElem.appendChild(strongElem);
 
         // Observing intersection
         observer.observe(cardElem);
