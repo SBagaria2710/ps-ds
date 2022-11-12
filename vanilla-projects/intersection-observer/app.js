@@ -8,9 +8,10 @@ let options = {
 
 let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
-        const className = index % 2 === 0 ? "peekabooLeft" : "peekabooRight";
         if (entry.isIntersecting) {
-            entry.target.classList.add(className);
+            entry.target.classList.add("peekaboo");
+        } else {
+            entry.target.classList.remove("peekaboo");
         }
     });
 }, options);
@@ -38,4 +39,4 @@ function init(num = DEFAULT_CARD_COUNT) {
     bodyElem.appendChild(containerElem);
 }
 
-init();
+init(25);
