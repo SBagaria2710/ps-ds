@@ -1,0 +1,40 @@
+body {
+    font-size: 20px;
+    font-family: 'Open Sans', serif;
+    background-color: #e5e5e5;
+}
+
+#game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    margin-bottom: 20px;
+}
+
+.grid-cell {
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+}
+
+.monke:after {
+    content: '🐒';
+}
