@@ -1,7 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 body {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Open Sans', serif;
     background-color: #e5e5e5;
+}
+
+button:disabled {
+    cursor: not-allowed;
 }
 
 #game {
@@ -11,20 +17,21 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.dashboard {
+.game-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.grid {
+.grid-container {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .grid-cell {
     border: 1px solid #000;
+    box-sizing: border-box;
     width: 100px;
     height: 100px;
     cursor: pointer;
@@ -37,4 +44,23 @@ body {
 
 .monke:after {
     content: '🐒';
+}
+
+.game-lifecycle-control {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.game-lifecycle-control button {
+    flex: 1 1;
+    padding: 8px 12px;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
 }

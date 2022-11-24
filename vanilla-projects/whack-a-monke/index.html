@@ -16,17 +16,21 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <!-- <div id="game-over">
+            <h3>Game Over!</h3>
+            <p>Your Score: <span></span></p>
+            <button>Start Over 🙋🏻‍♂️</button>
+        </div> -->
         <div id="game">
-            <div>
-                <div class="grid"></div>
-                <div class="dashboard">
-                    <div id="score">0</div>
-                    <div id="timer"></div>
-                </div>
-                <div id="reset"></div>
+            <h2 class="monke" style="text-align: center;text-decoration: underline;">Whack-A-Monke</h2>
+            <div class="game-info">
+                <div id="score">Score: <span>0</span></div>
+                <div id="timer">Time Remaining: <span>0</span>s</div>
             </div>
-            <div id="startOverlay">
-                <button onclick="startGame()">Start</button>
+            <div class="grid-container"></div>
+            <div class="game-lifecycle-control">
+                <button id="reset-game" onclick="resetGame()">Reset</button>
+                <button id="start-game" onclick="startGame()">Start</button>
             </div>
         </div>
         <script src="./app.js" async defer></script>
