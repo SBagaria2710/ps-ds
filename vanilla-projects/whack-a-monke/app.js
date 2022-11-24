@@ -3,7 +3,6 @@ const timerElem = document.getElementById("timer");
 const resetBtn = document.getElementById("reset-game");
 const startBtn = document.getElementById("start-game");
 const gridContainer = document.querySelector(".grid-container");
-// const gameOverPopUp = document.querySelector(".grid-container");
 
 const n = 3;
 let timerId = null;
