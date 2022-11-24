@@ -7,7 +7,7 @@ const gridContainer = document.querySelector(".grid-container");
 const n = 3;
 let timerId = null;
 let score = 0;
-let timeRemaining = 5;
+let timeRemaining = 30;
 let isClicked = false;
 
 function init() {
@@ -63,7 +63,7 @@ function startGame() {
 function resetGame() {
     timerId = null;
     score = 0;
-    timeRemaining = 5;
+    timeRemaining = 30;
     isClicked = false;
     startBtn.disabled = false;
     timerElem.querySelector("span").textContent = timeRemaining;
