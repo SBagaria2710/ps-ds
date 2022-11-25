@@ -53,10 +53,13 @@ function startGame() {
         const randomCell = Math.floor(Math.random()*n*n);
         randomGridElem = document.querySelector(`[data-position='${randomCell}']`);
         randomGridElem.classList.add("monke");
+      
+        const progressiveTimeout = 950 - (11.5*(30 - timeRemaining));
+        console.log(progressiveTimeout);
         setTimeout(function() {
             randomGridElem.classList.remove("monke");
             isClicked = false;
-        }, 800);
+        }, progressiveTimeout);
 
         // Update Timer
         timeRemaining -= 1;
