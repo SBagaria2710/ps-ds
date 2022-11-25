@@ -3,12 +3,16 @@ const timerElem = document.getElementById("timer");
 const resetBtn = document.getElementById("reset-game");
 const startBtn = document.getElementById("start-game");
 const gridContainer = document.querySelector(".grid-container");
+const audioElem = document.getElementById("audio");
 
 const n = 3;
 let timerId = null;
 let score = 0;
 let timeRemaining = 30;
 let isClicked = false;
+
+const finishAudio = "https://assets.mixkit.co/sfx/preview/mixkit-cartoon-monkey-applause-103.mp3";
+const gameStartAudio = "https://assets.mixkit.co/sfx/preview/mixkit-cartoon-monkey-mocking-laugh-107.mp3";
 
 function init() {
     for (let i = 0; i < n*n; i++) {
@@ -38,6 +42,9 @@ gridContainer.addEventListener("click", (e) => {
 });
 
 function startGame() {
+    audioElem.src = gameStartAudio;
+    audioElem.play();
+
     resetBtn.disabled = false;
     startBtn.disabled = true;
 
@@ -78,6 +85,9 @@ function resetGame() {
 };
 
 function gameOver() {
+    audioElem.src = finishAudio;
+    audioElem.play();
+
     resetBtn.disabled = true;
     startBtn.disabled = true;
     alert(`Game Over! Your final score is ${score} *slow claps*`);
