@@ -61,11 +61,15 @@ function startGame() {
 };
 
 function resetGame() {
-    timerId = null;
+    if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+    }
     score = 0;
     timeRemaining = 30;
     isClicked = false;
     startBtn.disabled = false;
+    resetBtn.disabled = true;
     timerElem.querySelector("span").textContent = timeRemaining;
     scoreElem.querySelector("span").textContent = score;
 };
