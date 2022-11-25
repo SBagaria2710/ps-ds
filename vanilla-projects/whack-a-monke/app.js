@@ -23,15 +23,18 @@ function init() {
 }
 
 gridContainer.addEventListener("click", (e) => {
-    if (isClicked) return;
+    if (isClicked || !timerId) return;
 
     const cell = e.target;
     if (cell.classList.contains("monke")) {
         score += 1;
-        isClicked = true;
-        scoreElem.querySelector("span").textContent = score;
-        cell.classList.remove("monke")
+    } else {
+        score -= 1;
     }
+
+    isClicked = true;
+    scoreElem.querySelector("span").textContent = score;
+    cell.classList.remove("monke")
 });
 
 function startGame() {
