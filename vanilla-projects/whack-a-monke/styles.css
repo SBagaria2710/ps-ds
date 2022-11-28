@@ -79,9 +79,10 @@ button:disabled {
 
 table {
     width: 100%;
+    padding: 12px 16px;
     border: 1px solid #000;
 }
 
 table td, table th {
-    text-align: center;
+    text-align: left;
 }

@@ -1,3 +1,8 @@
+// import { format } from "date-fns";
+// const { format } = require("date-fns");
+// const test = require("date-fns");
+console.log(dateFns);
+
 const scoreElem = document.getElementById("score");
 const timerElem = document.getElementById("timer");
 const resetBtn = document.getElementById("reset-game");
@@ -49,8 +54,7 @@ function init() {
 
             const rowElem = document.createElement("tr");
             const date = new Date(timestamp);
-            const dateStr = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
-            rowElem.innerHTML = `<td>${score}</td><td>${dateStr}</td>`
+            rowElem.innerHTML = `<td>${score < 10 ? `0${score}` : score}</td><td>${dateFns.format(date, "ddd D MMM, hh:mm a")}</td>`
             leaderboardElem.firstElementChild.appendChild(rowElem);
         }
     }
