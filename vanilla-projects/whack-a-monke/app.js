@@ -1,7 +1,4 @@
-// import { format } from "date-fns";
-// const { format } = require("date-fns");
-// const test = require("date-fns");
-console.log(dateFns);
+import { format } from 'https://cdn.skypack.dev/date-fns@2.29.3';
 
 const scoreElem = document.getElementById("score");
 const timerElem = document.getElementById("timer");
@@ -54,7 +51,7 @@ function init() {
 
             const rowElem = document.createElement("tr");
             const date = new Date(timestamp);
-            rowElem.innerHTML = `<td>${score < 10 ? `0${score}` : score}</td><td>${dateFns.format(date, "ddd D MMM, hh:mm a")}</td>`
+            rowElem.innerHTML = `<td>${score < 10 ? `0${score}` : score}</td><td>${format(date, "eee dd MMM, hh:mm a")}</td>`
             leaderboardElem.firstElementChild.appendChild(rowElem);
         }
     }

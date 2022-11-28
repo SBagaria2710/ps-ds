@@ -83,6 +83,6 @@ table {
     border: 1px solid #000;
 }
 
-table td, table th {
-    text-align: left;
+table th, table td {
+    text-align: center;
 }
