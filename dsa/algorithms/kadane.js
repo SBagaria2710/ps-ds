@@ -1,4 +1,5 @@
 const arr = [4, -1, 2, -7, 3, 4];
+// Q: Largest sum in a non-empty
 
 // O(n^2)
 function bruteForce() {
